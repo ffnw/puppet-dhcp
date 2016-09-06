@@ -16,5 +16,13 @@ class dhcp::config {
     order  => '00',
   }
 
+  file { '/etc/dnsmasq.d/dhcp-lease-max':
+    ensure => present,
+    source => 'puppet:///modules/dhcp/dhcp-lease-max',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+  }
+
 }
 
